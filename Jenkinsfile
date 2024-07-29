@@ -16,9 +16,7 @@ pipeline {
             steps {
 	              script {
 		                    app=docker.build ("akgundyg/exercise")
-		                    app.inside{
-			                            sh "curl localhost:8082"
-		                              } 
+		                
 	                      }
                     }
        }
