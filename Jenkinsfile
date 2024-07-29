@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+       stage('Docker build') {
+            steps {
+	              script {
+		                    app=docker.build ("akgundyg/train-schedule")
+		                    app.inside{
+			                            sh "echo (curl localhost:8082)"
+		                              } 
+	                      }
+                    }
+       }
+    }
