@@ -15,7 +15,7 @@ pipeline {
        stage('Docker build') {
             steps {
 	              script {
-		                    app=docker.build ("akgundyg/train-schedule")
+		                    app=docker.build ("akgundyg/exercise")
 		                    app.inside{
 			                            sh "echo (curl localhost:8082)"
 		                              } 
