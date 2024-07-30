@@ -22,7 +22,7 @@ pipeline {
        }
 	stage('Stop the old container') {
             steps {
-			sh "docker stop $(docker ps | grep 'Up'| awk '{print $1}')"
+			sh "docker stop $(docker ps | grep 'Up'| awk '{print \$1}')"
 
                     }
        }
